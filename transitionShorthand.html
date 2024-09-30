@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transitionShorthand</title>
+    <style>
+      a{
+        display: block; /* 인라인 요소는 레이아웃을 넘치기 때문에 보통 block을 많이 준다. */
+        width: 150px; height: 30px;
+        line-height: 30px;
+        color: #000;
+        text-decoration: none;
+        border: 1px solid #000;
+        text-align: center;
+      }
+      a:hover{
+        background-color: #000;
+        color: #fff;
+      }
+      .box{
+        width: 150px; height: 150px;
+        background-color: bisque;
+        margin: 10px 0;
+        /*
+        transition-duration: 1s;
+        transition-delay: 0.5s;
+        transition-timing-function: ease-in-out;
+        transition-property: all;
+        */
+        transition: all 1s 0.5s ease-in-out; /* 축약형. 첫 번째 나오는 숫자는 duration, 두 번째 나오는 숫자는 delay*/
+        transition: 1s; /* 제일 많이 쓰이는 방식*/
+      }
+      .btn:hover + .box1{
+        background-color: blueviolet;
+        width: 90vw;
+      }
+    </style>
+</head>
+<body>
+  <h1>transition 축약</h1>
+  <p>버튼 위에 마우스를 올리면 첫 번쨰 박스의 크기, 색상이 변경</p>
+  <a href="#" class="btn">이벤트</a>
+  <div class="box box1">움직인다</div>
+  <div class="box box2">안움직인다.</div>
+</body>
+</html>
